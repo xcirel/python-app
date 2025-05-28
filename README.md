@@ -49,4 +49,17 @@ cd k8s
 kubectl apply -f .
 kubectl get pods
 ```
-![image](README.assets/deployment-check.png)  
+![image](README.assets/deployment-check.png)
+
+## Helm Chart
+
+Creating a Helm chart for this application is straightforward. The chart is located in the `charts` directory.
+
+To install the chart, run the following command:
+
+```bash
+cd charts/python-app
+helm install python-app -n python --create-namespace .
+```
+
+![image](README.assets/helm-chart-deployment-check.png.png)
