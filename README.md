@@ -66,9 +66,9 @@ helm install python-app -n python --create-namespace .
 
 ## ArgoCD
 
-Now, I decided to use ArgoCD to manage the deployment of this application and maybe other apps in the future. The ArgoCD configuration is located in the `argocd` directory.
+Now, I decided to use ArgoCD to manage the deployment of this application and maybe other apps in the future. The ArgoCD configuration is located in the `charts/argocd` directory.
 
-Reference to get samples which I used for constructing my custom values can be found [here](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd).
+Reference to get samples which I used for constructing my custom values file can be found [here](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd).
 
 To install ArgoCD, run the following command:
 
@@ -76,3 +76,10 @@ To install ArgoCD, run the following command:
 helm upgrade --install argocd argo/argo-cd -n argocd --create-namespace --values charts/argocd/values.yaml
 ``` 
 ![image](README.assets/argocd-deployment-check.png)
+
+## Github Actions
+
+To automate the deployment process, I begin with building the Docker image and pushing it to Docker Hub. The GitHub Actions workflow is defined in `.github/workflows/deploy.yaml`.
+
+The reference that I used for this can be accessed [here](https://github.com/docker/build-push-action)
+
