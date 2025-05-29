@@ -79,7 +79,7 @@ helm upgrade --install argocd argo/argo-cd -n argocd --create-namespace --values
 
 ## Github Actions
 
-To automate the deployment process, I begin with building the Docker image and pushing it to Docker Hub. The GitHub Actions workflow is defined in `.github/workflows/deploy.yaml`.
+To automate the deployment process, I begin with building the Docker image and pushing it to Docker Hub. The GitHub Actions workflow is defined in `.github/workflows/ci.yaml`.
 
 The reference that I used for this can be accessed [here](https://github.com/docker/build-push-action)
 
