@@ -63,3 +63,16 @@ helm install python-app -n python --create-namespace .
 ```
 
 ![image](README.assets/helm-chart-deployment-check.png.png)
+
+## ArgoCD
+
+Now, I decided to use ArgoCD to manage the deployment of this application and maybe other apps in the future. The ArgoCD configuration is located in the `argocd` directory.
+
+Reference to get samples which I used for constructing my custom values can be found [here](https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd).
+
+To install ArgoCD, run the following command:
+
+```bash
+helm upgrade --install argocd argo/argo-cd -n argocd --create-namespace --values charts/argocd/values.yaml
+``` 
+![image](README.assets/argocd-deployment-check.png)
