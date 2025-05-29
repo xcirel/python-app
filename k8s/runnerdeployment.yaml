@@ -1,0 +1,9 @@
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: self-hosted-runners
+spec:
+  replicas: 2
+  template:
+    spec:
+      repository: xcirel/python-app

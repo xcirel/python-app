@@ -83,3 +83,27 @@ To automate the deployment process, I begin with building the Docker image and p
 
 The reference that I used for this can be accessed [here](https://github.com/docker/build-push-action)
 
+## Self Hosted Runners
+
+To run the GitHub Actions workflow in the next, I set up a self-hosted runner on my local machine. The instructions for setting up a self-hosted runner can be found [here](https://github.com/actions/actions-runner-controller).
+
+Apply the deployment file onto the folder `k8s/runnerdeployment.yaml` or:
+
+```bash
+# Install the self-hosted runner
+cat << EOF | kubectl apply -n actions-runner-system -f -
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: self-hosted-runners
+spec:
+  replicas: 2
+  template:
+    spec:
+      repository: xcirel/python-app
+EOF
+```
+
+![image](README.assets/self-hosted-runner-check-01.png)
+
+![image](README.assets/self-hosted-runner-check-02.png)
