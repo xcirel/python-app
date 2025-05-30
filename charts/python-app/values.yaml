@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: xcirel/python-app
   pullPolicy: IfNotPresent
-  tag: 13f95b
+  tag: aa108a
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
