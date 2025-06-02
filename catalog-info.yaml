@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-app
+  description: A simple application to deploy on Kubernetes.
+  annotations:
+    github.com/project-slug: xcirel/python-app
+spec:
+  type: service
+  owner: development
+  lifecycle: experimental
