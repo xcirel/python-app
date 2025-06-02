@@ -5,6 +5,7 @@ metadata:
   description: A simple application to deploy on Kubernetes.
   annotations:
     github.com/project-slug: xcirel/python-app
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: development
